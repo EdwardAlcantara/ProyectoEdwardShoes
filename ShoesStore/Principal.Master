@@ -1,0 +1,77 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Principal.master.cs" Inherits="ShoesStore.Principal" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <link href="/BootStap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="/BootStap/css/bootstrap-theme.min.css" rel="stylesheet" />
+    <script src="/BootStap/js/jquery-1.11.0.js"></script>
+    <script src="/BootStap/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+
+
+    <form id="form1" runat="server">
+        <div>
+            <nav class="navbar navbar-inverse" role="navigation">
+                <div class="container-fluid">
+                    <!-- Brand and toggle get grouped for better mobile display -->
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="/Default.aspx">Edward Shoes</a>
+                    </div>
+                    <ul class="nav navbar-nav">
+
+                        <li><a href="/Administracion/SeccionCalzado/RegistroCalzados.aspx">Registro Calzados</a></li>
+                        <li><a href="/Administracion/SeccionCalzado/ConsultaCalzados.aspx">Consultar Calzados</a></li>
+                        <li><a href="/Administracion/SeccionCalzado/ConsultadCalzados.aspx">Consultar Calzados</a></li>
+                        <li><a href="/Administracion/SeccionMarca/rMarca.aspx">Registro Marca</a></li>
+                        <li><a href="/Administracion/SeccionMarca/cMarca.aspx">Consultar Marca</a></li>
+                        <li><a href="/Administracion/SeccionTipo/rTipo.aspx">Registro Tipo</a></li>
+                        <li><a href="/Administracion/SeccionTipo/cTipo.aspx">Consultar Tipo</a></li>
+                        <li><a href="/Administracion/SeccionUsuario/rUsuario.aspx">Registro Usuario</a></li>
+                        <li><a href="/Administracion/SeccionUsuario/cUsuario.aspx">Consultar Usuario</a></li>
+                        
+                         <li class="dropdown">
+                                <asp:LoginView ID="MasterLoginView" runat="server">
+                                    <LoggedInTemplate>
+                                        <a class="dropdown-toggle" data-toggle="dropdown">Welcome:  
+                                            <asp:LoginName ID="MasterLoginName" runat="server" />
+                                        </a>
+                                    </LoggedInTemplate>
+                                    <AnonymousTemplate>
+                                        <a class="dropdown-toggle" data-toggle="dropdown">Welcome: Guest.</a>
+                                    </AnonymousTemplate>
+                                </asp:LoginView>
+                                <ul class="dropdown-menu">
+                                    <li>
+                                        <asp:LoginStatus ID="MasterLoginStatus" runat="server" LogoutAction="Redirect" LogoutPageUrl="~/Login.aspx" />
+                                    </li>
+                                </ul>
+                            </li>
+                    </ul>
+                   
+            </nav>
+
+            <div class="col-md-8">
+                <br />
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
+            <div class="col-md-4">
+               
+            </div>
+        </div>
+    </form>
+</body>
+</html>
